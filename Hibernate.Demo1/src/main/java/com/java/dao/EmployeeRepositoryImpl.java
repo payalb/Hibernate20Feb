@@ -21,28 +21,33 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
 		session.save(e);
-		//session.update(object);
-		/*session.delete(object);*/
-		/*Employee e=session.get(Employee.class, 1);
-		 
-		 */
-	
 		tx.commit();
+		session.close();
 	}
 
 	public void updateEmployee(Employee e) {
-		// TODO Auto-generated method stub
-
+		Session session = factory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.update(e);
+		tx.commit();
 	}
 
 	public void deleteEmployee(int id) {
-		// TODO Auto-generated method stub
+		Session session = factory.openSession();
+		Transaction tx = session.beginTransaction();
+		/*
+		 * Employee e= new Employee(); e.setId(id); session.delete(e);
+		 */
+		Employee e = session.load(Employee.class, id);
+		session.delete(e);
+		tx.commit();
 
 	}
 
 	public Employee getEmployeeById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = factory.openSession();
+	/*	return session.get(Employee.class, id);*/
+		return session.load(Employee.class, id);
 	}
 
 	public List<Employee> getEmployees() {
