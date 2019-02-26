@@ -5,5 +5,13 @@
     <artifactId>Hibernate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>Hibernate.Demo2</artifactId>
+  <artifactId>Hibernate.Demo3</artifactId>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>lombok</artifactId>
+  		<version>1.18.6</version>
+  		<scope>provided</scope>
+  	</dependency>
+  </dependencies>
 </project>

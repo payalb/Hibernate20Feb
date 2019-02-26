@@ -24,3 +24,5 @@ public class Employee {
 	@OneToOne
 	SocialSecurityNumber ssn;
 }
+//employee		//ssn
+/*1 payal	5675	5675	new york*/		

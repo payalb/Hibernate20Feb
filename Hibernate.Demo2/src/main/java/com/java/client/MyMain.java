@@ -10,7 +10,13 @@ import com.java.dto.SocialSecurityNumber;
 
 public class MyMain {
 	public static void main(String[] args) {
-			Configuration cfg = new Configuration();
+	 
+		int a= '\15';
+		System.out.println(a); //13
+		//a: 96 A: 65
+		byte b=0100;//4
+		System.out.println(b);
+		/*	Configuration cfg = new Configuration();
 			cfg.configure("hibernate-config.xml");// session factory object: schema
 			SessionFactory factory = cfg.buildSessionFactory();
 			
@@ -29,7 +35,7 @@ public class MyMain {
 			System.out.println(e.getSsn().getCity());
 			session2.close();
 			
-			factory.close();
+			factory.close();*/
 	}
 }
 /*employee			ssn
