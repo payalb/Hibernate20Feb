@@ -27,6 +27,7 @@
 		<module>Hibernate.Demo1</module>
 		<module>Hibernate.Demo2</module>
 		<module>Hibernate.Demo3</module>
+		<module>Hibernate.Demo4</module>
 	</modules>
 	<build>
 		<plugins>
