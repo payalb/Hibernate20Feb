@@ -1,0 +1,68 @@
+Q1)
+session= sf.openSession();
+Employee e=session.get(Employee.class,1);//parul
+e.setName("payal");
+session.flush();
+session.close();
+session= sf.openSession();
+session.beginTransaction();
+Employee e1=session.get(Employee.class,1);
+session.update(e);
+session.evict(e);
+e1.setName("David");
+session.getTransaction().commit();
+session.close();
+
+Q2)
+session= sf.openSession();
+Employee e=session.get(Employee.class,1);//parul
+e.setName("payal");
+session.flush();
+session.close();
+session= sf.openSession();
+session.beginTransaction();
+Employee e1=session.get(Employee.class,1);
+session.merge(e);
+session.evict(e);
+e1.setName("David");
+session.getTransaction().commit();
+session.close();
+
+
+Q3)
+session= sf.openSession();
+Employee e=session.get(Employee.class,1);//parul
+e.setName("payal");
+session.close();
+session= sf.openSession();
+session.beginTransaction();
+Employee e1=session.get(Employee.class,1);
+session.update(e1);
+session.getTransaction().commit();
+session.close();
+
+
+Q4)
+session= sf.openSession();
+Employee e=session.get(Employee.class,1);//parul
+session.beginTransaction();
+e.setName("payal");
+e.setName("parul");
+session.getTransaction().commit();
+session.beginTransaction();
+Employee e1=session.get(Employee.class,1);
+session.update(e1);
+session.getTransaction().commit();
+session.close();
+//How many queries will be fired?
+
+Q5)Employee has 1 to many relation with address
+session= sf.openSession();
+Employee e=session.get(Employee.class,1);//parul
+e.getAddresses();//print
+session.beginTransaction();
+Employee e1=session.get(Employee.class,1);
+e1.setAddresses(null);
+session.getTransaction().commit();
+session.close();
+//How many queries will be fired?
