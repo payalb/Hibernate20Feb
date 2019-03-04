@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.envers.Audited;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +16,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="\"User\"")
 @NoArgsConstructor
+@Cache(usage=CacheConcurrencyStrategy.READ_WRITE)
+@Audited
 public class User {
 	@Id
 	@GeneratedValue
